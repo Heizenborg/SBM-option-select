@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ChipComponent } from '../chip/chip.component';
 
 @Component({
@@ -10,8 +10,11 @@ export class SelectSearchComponent implements OnInit {
 
   @Input() chips: string[] = [];
   @Input() label: string;
+  @Output()
+  searchParams: EventEmitter<string> = new EventEmitter<string> ();
   open: boolean = false;
   loading: boolean;
+  searchValue: string = '';
 
 
   constructor() { }
@@ -22,6 +25,7 @@ export class SelectSearchComponent implements OnInit {
   }
 
   public openSelect() {
+    console.log("open/close");
     this.open = !this.open;
     this.loading = true;
   }
