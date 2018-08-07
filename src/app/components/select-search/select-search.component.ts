@@ -10,6 +10,7 @@ import { SearchItemComponent } from './search-item/search-item.component';
 export class SelectSearchComponent implements OnInit {
 
   @Input() chips: string[] = [];
+  @Input() options: string[];
   @Input() label: string;
   @Output()
   searchParams: EventEmitter<string> = new EventEmitter<string> ();
@@ -17,7 +18,6 @@ export class SelectSearchComponent implements OnInit {
   open: boolean = false;
   loading: boolean;
   searchValue: string = '';
-  options:string[];
 
   constructor() { }
 
