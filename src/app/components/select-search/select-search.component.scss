@@ -1,0 +1,82 @@
+.select-search {
+	margin: 10px 0 0 20px;
+	font-size: 1em;
+}
+.label {
+	color: #f99d00;
+	font-size: 1em;
+}
+.select-box {
+    width: 100%;
+    min-height: 25px;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: .25rem;
+	padding: 10px;
+	font-size: 1em;
+}
+.empty-label {
+	span {
+		float: right;
+		margin-right: 10px;
+	}
+}
+input:focus {
+	outline: none;
+	font-size: 1em;
+}
+.open {
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.40);
+   
+}
+.option-container {
+	height: 200px;
+	margin-top: 7px;
+	margin-left: -10px;
+	padding-right: 20px;
+	width: 100%;
+	border-top: 1px solid rgba(0, 0, 0, 0.10);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.input-and-chips{
+    width:100%;
+}
+.chips-container{
+    float:left;
+    max-width: 75%;
+    margin-top:-5px;
+}
+.select-search-input{
+    float:left;
+    border: none;
+    font-size: 1em;
+}
+i{
+    float:right;
+    margin-right:10px;
+}
+.loading {
+    display: inline-block;
+    margin:50px 45%;
+	width: 64px;
+	height: 64px;
+}
+.loading:after {
+	content: " ";
+	display: block;
+	width: 46px;
+	height: 46px;
+	margin: 1px;
+	border-radius: 50%;
+	border: 5px solid #8c8f92;
+	border-color: #8c8f92 transparent #8c8f92 transparent;
+	animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

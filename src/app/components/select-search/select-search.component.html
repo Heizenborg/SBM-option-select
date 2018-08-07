@@ -1,0 +1,48 @@
+<div class="select-search">
+  <div class="label">{{label}}</div>
+  <div class="select-box" *ngIf="!open && chips.length == 0">
+    <div class="empty-label">Select {{label}} <span><i class="fa fa-caret-down" aria-hidden="true" (click)="openSelect()"></i></span></div>
+  </div>
+  <!--IF VALUES HAVE BEEN SELECTED DISPLAY CHIPS AND NO LABEL-->
+  <div class="select-box" *ngIf="!open && chips.length > 0">
+      <div class="input-and-chips">
+          <div class="chips-container" >
+              <chip 
+              *ngFor="let chip of chips" 
+              [value]="chip"
+              (toRemove)= "getValue($event)"
+              ></chip>
+          </div>
+          <i  class="fa fa-caret-down" aria-hidden="true" (click)="openSelect()"></i>
+      </div>
+  </div>
+  <!--IF OPENING SELECT BOX AND NO CHIPS-->
+  <div class="select-box open" *ngIf="open && chips.length == 0">
+    <div>
+        <div class="input-and-chips">
+          <input class="select-search-input" placeholder="Select {{label}}" type="text" style="margin-bottom:10px;"> 
+          <i  class="fa fa-caret-down" aria-hidden="true" (click)="openSelect()"></i>
+          <div class="clearfix"></div>
+        </div>
+        <div class="option-container">
+          <div class="loading" *ngIf="loading"></div>
+        </div>
+    </div>
+  </div>
+<!--IF OPENING SELECT BOX AND CHIPS-->
+  <div class="select-box open" *ngIf="open && chips.length > 0">
+      <div>
+          <div class="input-and-chips">
+            <div class="chips-container" >
+              <chip *ngFor="let chip of chips" [value]=chip></chip>
+            </div>
+            <input class="select-search-input" type="text"> 
+            <i  class="fa fa-caret-down" aria-hidden="true" (click)="openSelect()"></i>
+            <div class="clearfix"></div>
+          </div>
+          <div class="option-container">
+            <div class="loading" *ngIf="loading"></div>
+          </div>
+      </div>
+    </div>
+</div>
