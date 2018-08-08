@@ -8,6 +8,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class ChipComponent {
   @Input()
   value: string;
+  @Input()
+  editable:boolean = true;
   @Output()
   toRemove: EventEmitter<string> = new EventEmitter<string>();
 

@@ -13,20 +13,21 @@
               (toRemove)= "getValue($event)"
               ></chip>
           </div>
-          <i  class="fa fa-caret-down" aria-hidden="true" (click)="openSelect()"></i>
+          <i  class="fa fa-angle-down" aria-hidden="true" (click)="openSelect()"></i>
       </div>
   </div>
   <!--IF OPENING SELECT BOX AND NO CHIPS-->
   <div class="select-box open" *ngIf="open && chips.length == 0">
     <div>
         <div class="input-and-chips">
-          <input 
+          <input
+          autofocus 
           class="select-search-input" 
           placeholder="Select {{label}}" 
           type="text" 
           (input)="getSearchValue($event.target.value)"
           style="margin-bottom:10px;"> 
-          <i  class="fa fa-caret-up" aria-hidden="true" (click)="openSelect()"></i>
+          <i  class="fa fa-angle-up" aria-hidden="true" (click)="openSelect()" style="margin-right:20px"></i>
           <div class="clearfix"></div>
         </div>
         <div class="option-container">
@@ -47,13 +48,15 @@
             <chip 
             *ngFor="let chip of chips" 
             [value]=chip
-            (toRemove)= "getValue($event)"></chip>
+            (toRemove)= "getValue($event)"
+            ></chip>
           </div>
           <input 
+          autofocus
           class="select-search-input" 
           type="text"
           (input)="getSearchValue($event.target.value)"> 
-          <i  class="fa fa-caret-up" aria-hidden="true" (click)="openSelect()"></i>
+          <i  class="fa fa-angle-up" aria-hidden="true" (click)="openSelect()"></i>
           <div class="clearfix"></div>
         </div>
         <div class="option-container">

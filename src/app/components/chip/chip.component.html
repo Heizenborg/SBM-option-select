@@ -1,1 +1,1 @@
-<div class="chip">{{value}}<a class="remove-chip" (click)="removeChip(value)">x</a></div>
+<div class="chip">{{value}}<a *ngIf="editable" class="remove-chip" (click)="removeChip(value)">x</a></div>

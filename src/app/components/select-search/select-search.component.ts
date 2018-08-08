@@ -22,7 +22,7 @@ export class SelectSearchComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.label = "Site";
+
     this.chips = [];
     this.options = ["Apple", "Microsoft","CBRE"]
   }
